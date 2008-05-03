@@ -3,17 +3,23 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
 	<groupId>org.mule.tools</groupId>
 	<artifactId>mule-tool-htmldash</artifactId>
 	<name>Simple HTML Dashboard</name>
-	<description>A simple component that generates an HTML dashboard representing event flows in a single Mule instance.</description>
+	<description>
+		A simple component that generates an HTML dashboard representing
+		event flows in a single Mule instance.
+	</description>
 	<packaging>jar</packaging>
 	<version>1.0-SNAPSHOT</version>
+
 	<properties>
-		<muleVersion>1.4.1</muleVersion>
+		<muleVersion>1.4.3</muleVersion>
 		<shortId>HTMLDASH</shortId>
 		<domainName>html-dashboard</domainName>
 	</properties>
+
 	<issueManagement>
 		<system>Jira</system>
 		<url>http://mule.mulesource.org/jira/browse/${shortId}</url>
@@ -33,20 +39,26 @@
 		<url>http://bamboo.muleforge.org/browse/${shortId}</url>
 		<notifiers />
 	</ciManagement>
+
 	<distributionManagement>
 		<repository>
 			<id>muleforge.webdav.releases</id>
-			<url>dav:https://dav.muleforge.org/repository/${domainName}/</url>
+			<url>
+				dav:https://dav.muleforge.org/repository/${domainName}/
+			</url>
 		</repository>
 		<snapshotRepository>
 			<id>muleforge.webdav.snapshots</id>
-			<url>dav:https://dav.muleforge.org/snapshots.repository/${domainName}/</url>
+			<url>
+				dav:https://dav.muleforge.org/snapshots.repository/${domainName}/
+			</url>
 		</snapshotRepository>
 		<site>
 			<id>muleforge.webdav.sites</id>
 			<url>dav:https://dav.muleforge.org/${domainName}/</url>
 		</site>
 	</distributionManagement>
+
 	<build>
 		<extensions>
 			<extension>
@@ -56,6 +68,22 @@
 			</extension>
 		</extensions>
 		<plugins>
+			<plugin>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<configuration>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>true</downloadJavadocs>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<compilerVersion>1.5</compilerVersion>
+					<source>1.5</source>
+					<target>1.5</target>
+				</configuration>
+			</plugin>
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<configuration>
@@ -138,7 +166,7 @@
 				<!-- configuration>
 					<threshold>Low</threshold>
 					<effort>Max</effort>
-				</configuration -->
+					</configuration -->
 			</plugin>
 		</plugins>
 	</reporting>
@@ -150,36 +178,22 @@
 			<version>${muleVersion}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.mule.modules</groupId>
-			<artifactId>mule-module-client</artifactId>
-			<version>${muleVersion}</version>
-		</dependency>
-		<dependency>
 			<groupId>org.mule.tests</groupId>
 			<artifactId>mule-tests-functional</artifactId>
 			<version>${muleVersion}</version>
 			<scope>test</scope>
 		</dependency>
-	<!-- Mule Transport Dependencies -->
+		<dependency>
+			<groupId>org.mule.modules</groupId>
+			<artifactId>mule-module-client</artifactId>
+			<version>${muleVersion}</version>
+			<scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.mule.transports</groupId>
 			<artifactId>mule-transport-vm</artifactId>
 			<version>${muleVersion}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.mule.transports</groupId>
-			<artifactId>mule-transport-tcp</artifactId>
-			<version>${muleVersion}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.mule.transports</groupId>
-			<artifactId>mule-transport-file</artifactId>
-			<version>${muleVersion}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.mule.transports</groupId>
-			<artifactId>mule-transport-stream</artifactId>
-			<version>${muleVersion}</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
-</project>		
+</project>

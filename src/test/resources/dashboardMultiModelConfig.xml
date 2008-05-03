@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mule-configuration PUBLIC "-//MuleSource //DTD mule-configuration XML V1.0//EN"
+                                "http://mule.mulesource.org/dtds/mule-configuration.dtd">
+
+<mule-configuration version="1.0" id="html-dashboard-unittest">
+	<mule-environment-properties embedded="true" synchronous="true" />
+
+	<model name="html-dashboard-unittest">
+		<mule-descriptor name="dashboard"
+			implementation="org.mule.tools.monitoring.Dashboard"
+			inboundEndpoint="vm://dashboard">
+			<properties>
+				<property name="modelName" value="monitored-components" />
+				<property name="refreshPeriod" value="30" />
+				<property name="componentNameRegex" value=".*component" />
+			</properties>
+		</mule-descriptor>
+	</model>
+
+	<model name="monitored-components">
+		<mule-descriptor name="fooComponent"
+			inboundEndpoint="vm://fooComponent"
+			implementation="org.mule.tck.functional.FunctionalTestComponent" />
+	</model>
+</mule-configuration>
