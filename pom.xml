@@ -9,7 +9,7 @@
 		event flows in a single Mule instance.
 	</description>
 	<packaging>jar</packaging>
-	<version>1.0.0</version>
+	<version>1.0.1-SNAPSHOT</version>
 
 	<properties>
 		<muleVersion>1.4.3</muleVersion>
@@ -22,10 +22,9 @@
 		<url>http://mule.mulesource.org/jira/browse/${shortId}</url>
 	</issueManagement>
 	<scm>
-		<connection>scm:svn:http://svn.muleforge.org/html-dashboard/tags/mule-tool-htmldash-1.0.0</connection>
-		<developerConnection>scm:svn:https://svn.muleforge.org/html-dashboard/tags/mule-tool-htmldash-1.0.0</developerConnection>
-		<tag>HEAD</tag>
-		<url>http://svn.html-dashboard.muleforge.org/tags/mule-tool-htmldash-1.0.0</url>
+		<connection>scm:svn:http://svn.muleforge.org/html-dashboard/</connection>
+		<developerConnection>scm:svn:https://svn.muleforge.org/html-dashboard/</developerConnection>
+		<url>http://svn.html-dashboard.muleforge.org/</url>
 	</scm>
 	<ciManagement>
 		<system>Bamboo</system>
