@@ -12,7 +12,7 @@
 	<version>1.0.1-SNAPSHOT</version>
 
 	<properties>
-		<muleVersion>1.4.3</muleVersion>
+		<muleVersion>1.4.4</muleVersion>
 		<shortId>HTMLDASH</shortId>
 		<domainName>html-dashboard</domainName>
 	</properties>
